@@ -22,5 +22,41 @@ final class Person {
         _alias = alias
         self.house = house
     }
-
 }
+
+extension Person {
+    var fullName: String {
+        return "\(name) \(house.name)"
+    }
+}
+
+// MARK: - Proxies
+extension Person {
+    var proxy: String {
+        return "\(name) \(alias) \(house.name)"
+    }
+}
+
+// MARK: - Hashable
+extension Person: Hashable {
+    var hashValue: Int {
+        return proxy.hashValue
+    }
+}
+
+// MARK: - Equatable
+extension Person: Equatable {
+    static func ==(lhs: Person, rhs: Person) -> Bool {
+        return lhs.proxy == rhs.proxy
+    }
+}
+
+
+
+
+
+
+
+
+
+
