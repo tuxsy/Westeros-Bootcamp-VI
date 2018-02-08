@@ -9,7 +9,7 @@
 import XCTest
 @testable import Westeros
 
-class ParsonTests: XCTestCase {
+class PersonTests: XCTestCase {
     
     var starkHouse: House!
     var starkSigil: Sigil!
