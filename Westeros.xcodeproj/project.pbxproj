@@ -12,8 +12,8 @@
 		4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */; };
 		4BC93615202CF019007FE051 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93614202CF019007FE051 /* HouseTests.swift */; };
 		4BC93618202CF1BA007FE051 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93617202CF1BA007FE051 /* House.swift */; };
-		4BC9361B202CFD85007FE051 /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361A202CFD85007FE051 /* CharacterTests.swift */; };
-		4BC9361D202CFDF0007FE051 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361C202CFDF0007FE051 /* Character.swift */; };
+		4BC9361B202CFD85007FE051 /* ParsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361A202CFD85007FE051 /* ParsonTests.swift */; };
+		4BC9361D202CFDF0007FE051 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361C202CFDF0007FE051 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +36,8 @@
 		4BC9360B202CE4A8007FE051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BC93614202CF019007FE051 /* HouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTests.swift; sourceTree = "<group>"; };
 		4BC93617202CF1BA007FE051 /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		4BC9361A202CFD85007FE051 /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
-		4BC9361C202CFDF0007FE051 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		4BC9361A202CFD85007FE051 /* ParsonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsonTests.swift; sourceTree = "<group>"; };
+		4BC9361C202CFDF0007FE051 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +93,7 @@
 			children = (
 				4BC9360B202CE4A8007FE051 /* Info.plist */,
 				4BC93614202CF019007FE051 /* HouseTests.swift */,
-				4BC9361A202CFD85007FE051 /* CharacterTests.swift */,
+				4BC9361A202CFD85007FE051 /* ParsonTests.swift */,
 			);
 			path = WesterosTests;
 			sourceTree = "<group>";
@@ -102,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				4BC93617202CF1BA007FE051 /* House.swift */,
-				4BC9361C202CFDF0007FE051 /* Character.swift */,
+				4BC9361C202CFDF0007FE051 /* Person.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -210,7 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC9361D202CFDF0007FE051 /* Character.swift in Sources */,
+				4BC9361D202CFDF0007FE051 /* Person.swift in Sources */,
 				4BC93618202CF1BA007FE051 /* House.swift in Sources */,
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
 			);
@@ -221,7 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC93615202CF019007FE051 /* HouseTests.swift in Sources */,
-				4BC9361B202CFD85007FE051 /* CharacterTests.swift in Sources */,
+				4BC9361B202CFD85007FE051 /* ParsonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
