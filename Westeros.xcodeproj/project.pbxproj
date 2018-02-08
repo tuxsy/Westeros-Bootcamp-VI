@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC935F4202CE4A7007FE051 /* AppDelegate.swift */; };
-		4BC935F7202CE4A7007FE051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC935F6202CE4A7007FE051 /* ViewController.swift */; };
-		4BC935FA202CE4A7007FE051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935F8202CE4A7007FE051 /* Main.storyboard */; };
 		4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FB202CE4A7007FE051 /* Assets.xcassets */; };
 		4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */; };
 		4BC9360A202CE4A8007FE051 /* WesterosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93609202CE4A8007FE051 /* WesterosTests.swift */; };
@@ -28,8 +26,6 @@
 /* Begin PBXFileReference section */
 		4BC935F1202CE4A7007FE051 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC935F4202CE4A7007FE051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BC935F6202CE4A7007FE051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4BC935F9202CE4A7007FE051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BC935FB202CE4A7007FE051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BC935FE202CE4A7007FE051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC93600202CE4A7007FE051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				4BC935F4202CE4A7007FE051 /* AppDelegate.swift */,
-				4BC935F6202CE4A7007FE051 /* ViewController.swift */,
-				4BC935F8202CE4A7007FE051 /* Main.storyboard */,
 				4BC935FB202CE4A7007FE051 /* Assets.xcassets */,
 				4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */,
 				4BC93600202CE4A7007FE051 /* Info.plist */,
@@ -181,7 +175,6 @@
 			files = (
 				4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */,
 				4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */,
-				4BC935FA202CE4A7007FE051 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +192,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BC935F7202CE4A7007FE051 /* ViewController.swift in Sources */,
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,14 +215,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4BC935F8202CE4A7007FE051 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4BC935F9202CE4A7007FE051 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -353,12 +337,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Westeros/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrefreire.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -368,12 +354,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LNA9LB2Y8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Westeros/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexandrefreire.Westeros;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
