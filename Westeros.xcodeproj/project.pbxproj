@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BAFC986203238ED00C8BF74 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC983203238ED00C8BF74 /* lannister.jpg */; };
+		4BAFC987203238ED00C8BF74 /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC984203238ED00C8BF74 /* codeIsComing.png */; };
+		4BAFC988203238ED00C8BF74 /* targaryenSmall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC985203238ED00C8BF74 /* targaryenSmall.jpg */; };
+		4BAFC98C20323A8500C8BF74 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC98A20323A8500C8BF74 /* HouseDetailViewController.swift */; };
+		4BAFC98D20323A8500C8BF74 /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC98B20323A8500C8BF74 /* HouseDetailViewController.xib */; };
 		4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC935F4202CE4A7007FE051 /* AppDelegate.swift */; };
 		4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FB202CE4A7007FE051 /* Assets.xcassets */; };
 		4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */; };
@@ -27,6 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4BAFC983203238ED00C8BF74 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
+		4BAFC984203238ED00C8BF74 /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
+		4BAFC985203238ED00C8BF74 /* targaryenSmall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = targaryenSmall.jpg; sourceTree = "<group>"; };
+		4BAFC98A20323A8500C8BF74 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
+		4BAFC98B20323A8500C8BF74 /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
 		4BC935F1202CE4A7007FE051 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC935F4202CE4A7007FE051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC935FB202CE4A7007FE051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +68,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BAFC9892032391B00C8BF74 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				4BAFC984203238ED00C8BF74 /* codeIsComing.png */,
+				4BAFC983203238ED00C8BF74 /* lannister.jpg */,
+				4BAFC985203238ED00C8BF74 /* targaryenSmall.jpg */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		4BAFC98E20323AAA00C8BF74 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BAFC98A20323A8500C8BF74 /* HouseDetailViewController.swift */,
+				4BAFC98B20323A8500C8BF74 /* HouseDetailViewController.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		4BC935E8202CE4A7007FE051 = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +108,13 @@
 		4BC935F3202CE4A7007FE051 /* Westeros */ = {
 			isa = PBXGroup;
 			children = (
+				4BAFC98E20323AAA00C8BF74 /* Controllers */,
+				4BC93619202CF82C007FE051 /* Domain */,
+				4BAFC9892032391B00C8BF74 /* Assets */,
 				4BC935F4202CE4A7007FE051 /* AppDelegate.swift */,
 				4BC935FB202CE4A7007FE051 /* Assets.xcassets */,
 				4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */,
 				4BC93600202CE4A7007FE051 /* Info.plist */,
-				4BC93619202CF82C007FE051 /* Domain */,
 			);
 			path = Westeros;
 			sourceTree = "<group>";
@@ -191,8 +222,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAFC986203238ED00C8BF74 /* lannister.jpg in Resources */,
+				4BAFC988203238ED00C8BF74 /* targaryenSmall.jpg in Resources */,
+				4BAFC98D20323A8500C8BF74 /* HouseDetailViewController.xib in Resources */,
 				4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */,
 				4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */,
+				4BAFC987203238ED00C8BF74 /* codeIsComing.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAFC98C20323A8500C8BF74 /* HouseDetailViewController.swift in Sources */,
 				4BC9361D202CFDF0007FE051 /* Person.swift in Sources */,
 				4BC93618202CF1BA007FE051 /* House.swift in Sources */,
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
