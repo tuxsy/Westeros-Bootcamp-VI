@@ -10,8 +10,57 @@ import UIKit
 
 class HouseDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // Mark: - Outlets
+    @IBOutlet weak var houseNameLabel: UILabel!
+    @IBOutlet weak var wordsLabel: UILabel!
+    @IBOutlet weak var sigilImageView: UIImageView!
+    
+    // Mark: - Properties
+    let model: House
+    
+    // Mark: - Initialization
+    init(model: House) {
+        // Primero, limpias tu propio desorder
+        self.model = model
+        // Llamas a super
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
+    }
+    
+    // Chapuza de los de Cupertino relacionada con los nil
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // Mark: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        syncModelWithView()
+    }
+    
+    // Mark: - Sync
+    func syncModelWithView() {
+        // Model -> View
+        houseNameLabel.text = "House \(model.name)"
+        sigilImageView.image = model.sigil.image
+        wordsLabel.text = model.words
         
+        title = model.name
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
