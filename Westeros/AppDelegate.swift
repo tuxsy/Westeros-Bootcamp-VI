@@ -25,15 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Crear el modelo
         let houses = Repository.local.houses
 
-        // Crear los controladorer
-        var controllers = [UIViewController]()
-        for house in houses {
-            controllers.append(HouseDetailViewController(model: house).wrappedInNavigation())
-        }
-        
         // Creamos los combinadores
         let tabBarViewController = UITabBarController()
-        tabBarViewController.viewControllers = controllers
+        
+        tabBarViewController.viewControllers =
+            houses
+              .map{ HouseDetailViewController(model: $0) }
+              .map{ $0.wrappedInNavigation()}
         
         // Asignamos el rootVC
         window?.rootViewController = tabBarViewController
