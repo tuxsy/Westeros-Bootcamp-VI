@@ -11,8 +11,11 @@ import XCTest
 
 class RepositoryTests: XCTestCase {
     
+    var localHouses: [House]!
+    
     override func setUp() {
         super.setUp()
+        localHouses = Repository.local.houses
     }
     
     override func tearDown() {
@@ -25,13 +28,43 @@ class RepositoryTests: XCTestCase {
     }
     
     func testLocalRepositoryHousesCreation() {
-        let houses = Repository.local.houses
-        XCTAssertNotNil(houses)
-        XCTAssertEqual(houses.count, 2)
-        
+        XCTAssertNotNil(localHouses)
+        XCTAssertEqual(localHouses.count, 3)
+    }
+    
+    func testLocalRepositoryReturnsSortedArrayOfHouses() {
+        // [2, 5, 6, 10, 18].sorted()
+        // [2, 5, 6, 10, 18]
+        XCTAssertEqual(localHouses, localHouses.sorted())
+    }
+    
+    func testLocalRepositoryReturnsHouseByCaseInsensitively() {
+        let stark = Repository.local.house(named: "sTarK")
+        XCTAssertEqual(stark?.name, "Stark")
     }
     
     
     
     
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
