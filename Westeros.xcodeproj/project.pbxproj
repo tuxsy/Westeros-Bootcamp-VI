@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B52842B20362B8D00E03DD6 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B52842920362B8D00E03DD6 /* WikiViewController.swift */; };
+		4B52842C20362B8D00E03DD6 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B52842A20362B8D00E03DD6 /* WikiViewController.xib */; };
 		4BAFC986203238ED00C8BF74 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC983203238ED00C8BF74 /* lannister.jpg */; };
 		4BAFC987203238ED00C8BF74 /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC984203238ED00C8BF74 /* codeIsComing.png */; };
 		4BAFC988203238ED00C8BF74 /* targaryenSmall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4BAFC985203238ED00C8BF74 /* targaryenSmall.jpg */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B52842920362B8D00E03DD6 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
+		4B52842A20362B8D00E03DD6 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		4BAFC983203238ED00C8BF74 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
 		4BAFC984203238ED00C8BF74 /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
 		4BAFC985203238ED00C8BF74 /* targaryenSmall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = targaryenSmall.jpg; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 			children = (
 				4BAFC98A20323A8500C8BF74 /* HouseDetailViewController.swift */,
 				4BAFC98B20323A8500C8BF74 /* HouseDetailViewController.xib */,
+				4B52842920362B8D00E03DD6 /* WikiViewController.swift */,
+				4B52842A20362B8D00E03DD6 /* WikiViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BAFC986203238ED00C8BF74 /* lannister.jpg in Resources */,
+				4B52842C20362B8D00E03DD6 /* WikiViewController.xib in Resources */,
 				4BAFC988203238ED00C8BF74 /* targaryenSmall.jpg in Resources */,
 				4BAFC98D20323A8500C8BF74 /* HouseDetailViewController.xib in Resources */,
 				4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */,
@@ -268,6 +275,7 @@
 				4BAFC99120337C8500C8BF74 /* UIViewController+Additions.swift in Sources */,
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
 				4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */,
+				4B52842B20362B8D00E03DD6 /* WikiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

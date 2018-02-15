@@ -21,6 +21,7 @@ class HouseTests: XCTestCase {
     var arya: Person!
     var tyrion: Person!
     
+    
     override func setUp() {
         super.setUp()
         starkSigil = Sigil(image: UIImage(), description: "Lobo Huargo")
