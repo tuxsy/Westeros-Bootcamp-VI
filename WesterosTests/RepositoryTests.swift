@@ -41,8 +41,18 @@ class RepositoryTests: XCTestCase {
     func testLocalRepositoryReturnsHouseByCaseInsensitively() {
         let stark = Repository.local.house(named: "sTarK")
         XCTAssertEqual(stark?.name, "Stark")
+        
+        let keepcoding = Repository.local.house(named: "Keepcoding")
+        XCTAssertNil(keepcoding)
     }
     
+    func testHouseFiltering() {
+        let filtered = Repository.local.houses(filteredBy: { $0.count == 1 })
+        XCTAssertEqual(filtered.count, 1)
+        
+        let otherFilter = Repository.local.houses(filteredBy: { $0.words.contains("invierno")})
+        XCTAssertEqual(otherFilter.count, 1)
+    }
     
     
     
