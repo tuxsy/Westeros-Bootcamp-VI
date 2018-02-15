@@ -11,28 +11,48 @@ import WebKit
 
 class WikiViewController: UIViewController {
     
+    // Mark: - Outlets
     @IBOutlet weak var webView: WKWebView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Mark: - Properties
+    let model: House
+    
+    // Mark: - Initialization
+    init(model: House) {
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // chapuza
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    */
-
+    
+    // Mark: - Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        syncModelWithView()
+    }
+    
+    // MARK: - Sync
+    func syncModelWithView() {
+        title = model.name
+        webView.load(URLRequest(url: model.wikiURL))
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
