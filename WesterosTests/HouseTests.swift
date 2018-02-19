@@ -32,7 +32,6 @@ class HouseTests: XCTestCase {
         
         robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         arya = Person(name: "Arya", house: starkHouse)
-        
         tyrion = Person(name: "Tyrion", alias: "El Enano", house: lannisterHouse)
     }
     

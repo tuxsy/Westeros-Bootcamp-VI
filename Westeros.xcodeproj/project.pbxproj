@@ -19,11 +19,11 @@
 		4BAFC99120337C8500C8BF74 /* UIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC99020337C8500C8BF74 /* UIViewController+Additions.swift */; };
 		4BAFC9932033807900C8BF74 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC9922033807900C8BF74 /* RepositoryTests.swift */; };
 		4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC9942033816C00C8BF74 /* Repository.swift */; };
+		4BC6ADD5203B607C00813C0D /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93617202CF1BA007FE051 /* House.swift */; };
 		4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC935F4202CE4A7007FE051 /* AppDelegate.swift */; };
 		4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FB202CE4A7007FE051 /* Assets.xcassets */; };
 		4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */; };
 		4BC93615202CF019007FE051 /* HouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93614202CF019007FE051 /* HouseTests.swift */; };
-		4BC93618202CF1BA007FE051 /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93617202CF1BA007FE051 /* House.swift */; };
 		4BC9361B202CFD85007FE051 /* PersonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361A202CFD85007FE051 /* PersonTests.swift */; };
 		4BC9361D202CFDF0007FE051 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC9361C202CFDF0007FE051 /* Person.swift */; };
 /* End PBXBuildFile section */
@@ -278,7 +278,7 @@
 			files = (
 				4BAFC98C20323A8500C8BF74 /* HouseDetailViewController.swift in Sources */,
 				4BC9361D202CFDF0007FE051 /* Person.swift in Sources */,
-				4BC93618202CF1BA007FE051 /* House.swift in Sources */,
+				4BC6ADD5203B607C00813C0D /* House.swift in Sources */,
 				4BAFC99120337C8500C8BF74 /* UIViewController+Additions.swift in Sources */,
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
 				4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */,
