@@ -20,6 +20,8 @@
 		4BAFC9932033807900C8BF74 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC9922033807900C8BF74 /* RepositoryTests.swift */; };
 		4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFC9942033816C00C8BF74 /* Repository.swift */; };
 		4BC6ADD5203B607C00813C0D /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC93617202CF1BA007FE051 /* House.swift */; };
+		4BC6ADDB203B68C100813C0D /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC6ADD9203B68C100813C0D /* MemberListViewController.swift */; };
+		4BC6ADDC203B68C100813C0D /* MemberListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BC6ADDA203B68C100813C0D /* MemberListViewController.xib */; };
 		4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC935F4202CE4A7007FE051 /* AppDelegate.swift */; };
 		4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FB202CE4A7007FE051 /* Assets.xcassets */; };
 		4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC935FD202CE4A7007FE051 /* LaunchScreen.storyboard */; };
@@ -51,6 +53,8 @@
 		4BAFC99020337C8500C8BF74 /* UIViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Additions.swift"; sourceTree = "<group>"; };
 		4BAFC9922033807900C8BF74 /* RepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		4BAFC9942033816C00C8BF74 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		4BC6ADD9203B68C100813C0D /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
+		4BC6ADDA203B68C100813C0D /* MemberListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberListViewController.xib; sourceTree = "<group>"; };
 		4BC935F1202CE4A7007FE051 /* Westeros.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Westeros.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BC935F4202CE4A7007FE051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BC935FB202CE4A7007FE051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				4B52842A20362B8D00E03DD6 /* WikiViewController.xib */,
 				4B528431203644F600E03DD6 /* HouseListViewController.swift */,
 				4B528432203644F600E03DD6 /* HouseListViewController.xib */,
+				4BC6ADD9203B68C100813C0D /* MemberListViewController.swift */,
+				4BC6ADDA203B68C100813C0D /* MemberListViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 				4BC935ED202CE4A7007FE051 /* Sources */,
 				4BC935EE202CE4A7007FE051 /* Frameworks */,
 				4BC935EF202CE4A7007FE051 /* Resources */,
+				4BC6ADD8203B685800813C0D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -255,6 +262,7 @@
 				4B52842C20362B8D00E03DD6 /* WikiViewController.xib in Resources */,
 				4BAFC988203238ED00C8BF74 /* targaryenSmall.jpg in Resources */,
 				4B528434203644F600E03DD6 /* HouseListViewController.xib in Resources */,
+				4BC6ADDC203B68C100813C0D /* MemberListViewController.xib in Resources */,
 				4BAFC98D20323A8500C8BF74 /* HouseDetailViewController.xib in Resources */,
 				4BC935FF202CE4A7007FE051 /* LaunchScreen.storyboard in Resources */,
 				4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */,
@@ -271,6 +279,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4BC6ADD8203B685800813C0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4BC935ED202CE4A7007FE051 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -284,6 +308,7 @@
 				4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */,
 				4B52842B20362B8D00E03DD6 /* WikiViewController.swift in Sources */,
 				4B528433203644F600E03DD6 /* HouseListViewController.swift in Sources */,
+				4BC6ADDB203B68C100813C0D /* MemberListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
