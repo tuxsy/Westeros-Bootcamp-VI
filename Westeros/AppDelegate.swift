@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Creamos los controladores (masterVC, detailVC)
         let houseListViewController = HouseListViewController(model: houses)
-        let houseDetailViewController = HouseDetailViewController(model: houses.first!)
+        
+        let lastSelectedHouse = houseListViewController.lastSelectedHouse()
+        let houseDetailViewController = HouseDetailViewController(model: lastSelectedHouse)
         
         
         // Asignar delegados
@@ -41,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Asignamos el rootVC
         window?.rootViewController = splitViewController
+        
+        UINavigationBar.appearance().backgroundColor = .blue
         
         return true
     }
