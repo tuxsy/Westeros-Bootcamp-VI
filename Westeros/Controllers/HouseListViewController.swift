@@ -81,10 +81,17 @@ class HouseListViewController: UITableViewController {
         let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
         
         notificationCenter.post(notification)
+        
+        // Guardar las coordenadas (section, row) de la ultima casa seleccionada
+        saveLastSelectedHouse(at: indexPath.row)
     }
 }
 
-
+extension HouseListViewController {
+    func saveLastSelectedHouse(at row: Int) {
+        
+    }
+}
 
 
 
