@@ -29,6 +29,7 @@ class WikiViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+   
     // Mark: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,18 @@ class WikiViewController: UIViewController {
         loadingView.startAnimating()
         webView.navigationDelegate = self
         syncModelWithView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Nos damos de alta en las notificaciones
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // Nos damos de baja en las notific
     }
     
     // MARK: - Sync

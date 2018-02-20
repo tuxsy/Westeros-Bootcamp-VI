@@ -16,7 +16,7 @@ class HouseDetailViewController: UIViewController {
     @IBOutlet weak var sigilImageView: UIImageView!
     
     // Mark: - Properties
-    let model: House
+    var model: House
     
     // Mark: - Initialization
     init(model: House) {
@@ -51,6 +51,7 @@ class HouseDetailViewController: UIViewController {
     func setupUI() {
         let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
         let members = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
+        
         navigationItem.rightBarButtonItems = [wikiButton, members]
     }
     
@@ -63,12 +64,20 @@ class HouseDetailViewController: UIViewController {
     }
     
     @objc func displayMembers() {
-        // TODO: implement!!!!!
-        // FIXME: 
+        // Creamos el VC
+        let memberListViewController = MemberListViewController(model: model.sortedMembers)
+        
+        // Hacemos Push
+        navigationController?.pushViewController(memberListViewController, animated: true)
     }
 }
 
-
+extension HouseDetailViewController: HouseListViewControllerDelegate {
+    func houseListViewController(_ viewController: HouseListViewController, didSelectHouse house: House) {
+        self.model = house
+        syncModelWithView()
+    }
+}
 
 
 

@@ -31,9 +31,6 @@ class MemberListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Asignamos delegado
-        tableView.delegate = self
-        
         // Asignamos la fuente de datos
         tableView.dataSource = self
     }
@@ -41,6 +38,7 @@ class MemberListViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension MemberListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }
@@ -52,10 +50,6 @@ extension MemberListViewController: UITableViewDataSource {
         let person = model[indexPath.row]
         
         // Preguntar por una celda (a una cache) o Crearla
-//        var cell = tableView.dequeueReusableCell(withIdentifier: cellId)
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: cellId)
-//        }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
             ?? UITableViewCell(style: .default, reuseIdentifier: cellId)
         
@@ -65,11 +59,6 @@ extension MemberListViewController: UITableViewDataSource {
         // Devolver la celda
         return cell
     }
-}
-
-// MARK: - UITableViewDelegate
-extension MemberListViewController: UITableViewDelegate {
-    
 }
 
 

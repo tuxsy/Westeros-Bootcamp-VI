@@ -8,10 +8,20 @@
 
 import UIKit
 
+let HOUSE_KEY = "HouseKey"
+let HOUSE_DID_CHANGE_NOTIFICATION_NAME = "HouseDidChange"
+
+protocol HouseListViewControllerDelegate {
+    // should, will, did
+    func houseListViewController(_ viewController: HouseListViewController, didSelectHouse: House)
+}
+
+
 class HouseListViewController: UITableViewController {
     
     // Mark: - Properties
     let model: [House]
+    var delegate: HouseListViewControllerDelegate?
     
     // Mark: - Initialization
     init(model: [House]) {
@@ -62,11 +72,15 @@ class HouseListViewController: UITableViewController {
         // Averiguar que casa han pulsado
         let house = model[indexPath.row]
         
-        // Crear un controlador de detalle de esa casa
-        let houseDetailViewController = HouseDetailViewController(model: house)
+        // Aviso al delegado
+        delegate?.houseListViewController(self, didSelectHouse: house)
         
-        // Hacer un push
-        navigationController?.pushViewController(houseDetailViewController, animated: true)
+        // Mando la misma info a traves de notificaciones
+        let notificationCenter = NotificationCenter.default
+        
+        let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
+        
+        notificationCenter.post(notification)
     }
 }
 
