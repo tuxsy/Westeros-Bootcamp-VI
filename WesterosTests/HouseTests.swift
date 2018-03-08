@@ -8,7 +8,8 @@
 
 import XCTest
 @testable import Westeros
-
+// NOTA: No refactorizo el test para usar el Repository porque este test ya no sería unitario,
+//  estaría testeando dos clases: House y Repository
 class HouseTests: XCTestCase {
     
     var starkSigil: Sigil!
