@@ -44,8 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Asignamos el rootVC
         window?.rootViewController = splitViewController
         
-        UINavigationBar.appearance().backgroundColor = .blue
-        
         return true
     }
 

@@ -61,7 +61,7 @@ final class LocalFactory: HouseFactory {
     }
     
     func houses(filteredBy: Filter) -> [House] {
-        return Repository.local.houses.filter(filteredBy)
+        return houses.filter(filteredBy)
     }
     
     

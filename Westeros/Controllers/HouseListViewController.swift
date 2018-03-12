@@ -8,8 +8,6 @@
 
 import UIKit
 
-let HOUSE_KEY = "HouseKey"
-let HOUSE_DID_CHANGE_NOTIFICATION_NAME = "HouseDidChange"
 let LAST_HOUSE = "LAST_HOUSE"
 
 protocol HouseListViewControllerDelegate: class {

@@ -44,17 +44,15 @@ class WikiViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Nos damos de alta ...
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(houseDidChange), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        // Nos damos de alta de las notificaciones, este método viene de una extensión de UIViewController
+        observeNotificationHouseDidChange(selector: #selector(houseDidChange))
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // Nos damos de baja ...
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.removeObserver(self)
+        // Nos damos de baja de las notificaciones, este método viene de una extensión de UIViewController
+        removeObserver()
     }
     
     // MARK: - Sync
