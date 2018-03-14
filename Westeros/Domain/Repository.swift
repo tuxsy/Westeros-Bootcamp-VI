@@ -15,12 +15,15 @@ final class Repository {
 
 protocol HouseFactory {
     
-    typealias Filter = (House) -> Bool
+    typealias HouseFilter = (House) -> Bool
+    typealias SeasonFilter = (Season) -> Bool
     
     var houses: [House] { get }
-    var seasons: [Season] {get}
     func house(named: String) -> House?
-    func houses(filteredBy: Filter) -> [House]
+    func houses(filteredBy: HouseFilter) -> [House]
+    
+    var seasons: [Season] {get}
+    func seasons(filteredBy: SeasonFilter) -> [Season]
 }
 
 final class LocalFactory: HouseFactory {
@@ -29,18 +32,21 @@ final class LocalFactory: HouseFactory {
         return loadHousesData().sorted()
     }
     
+    func house(named name: String) -> House? {
+        let house = houses.filter{ $0.name.uppercased() == name.uppercased() }.first
+        return house
+    }
+    
+    func houses(filteredBy: HouseFilter) -> [House] {
+        return houses.filter(filteredBy)
+    }
+    
     var seasons: [Season] {
         return loadSeasonsData().sorted()
     }
     
-    func house(named name: String) -> House? {
-        let house = houses.filter{ $0.name.uppercased() == name.uppercased() }.first
-        //let house = houses.first{ $0.name.uppercased() == name.uppercased() }
-        return house
-    }
-    
-    func houses(filteredBy: Filter) -> [House] {
-        return houses.filter(filteredBy)
+    func seasons(filteredBy: SeasonFilter) -> [Season] {
+        return seasons.filter(filteredBy)
     }
     
     
