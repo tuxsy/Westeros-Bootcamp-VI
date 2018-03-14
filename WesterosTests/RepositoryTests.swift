@@ -12,21 +12,25 @@ import XCTest
 class RepositoryTests: XCTestCase {
     
     var localHouses: [House]!
+    var localSeasons: [Season]!
     
     override func setUp() {
         super.setUp()
         localHouses = Repository.local.houses
+        localSeasons = Repository.local.seasons
     }
     
     override func tearDown() {
         super.tearDown()
     }
     
+    // MARK: - Local Repository common tests
     func testLocalRepositoryCreation() {
         let local = Repository.local
         XCTAssertNotNil(local)
     }
     
+    // MARK: - House Collection tests
     func testLocalRepositoryHousesCreation() {
         XCTAssertNotNil(localHouses)
         XCTAssertEqual(localHouses.count, 3)
@@ -52,6 +56,21 @@ class RepositoryTests: XCTestCase {
         
         let otherFilter = Repository.local.houses(filteredBy: { $0.words.contains("invierno")})
         XCTAssertEqual(otherFilter.count, 1)
+    }
+    
+    // MARK: - Season Collection test
+    func testLocalRepositorySeasonsCreation() {
+        XCTAssertNotNil(localSeasons)
+        XCTAssertEqual(localSeasons.count, 7) // Deben existir 7 Temporadas
+        
+        localSeasons.forEach{
+            XCTAssertGreaterThanOrEqual($0.count, 2) // Cada temporada debe tener al menos 2 episodios
+        }
+    }
+    
+    
+    func testLocalRepositoryReturnsSortedArrayOfSeasons() {
+        XCTAssertEqual(localSeasons, localSeasons.sorted())
     }
     
     

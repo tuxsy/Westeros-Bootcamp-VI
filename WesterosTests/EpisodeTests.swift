@@ -11,8 +11,8 @@ import XCTest
 
 let EPISODE_1_NAME = "1x01 Winter is Coming"
 let EPISODE_2_NAME = "1x02 The Kingsroad"
-let EPISODE_1_RELEASE_DATE = Date(dateString: "2011-04-17")
-let EPISODE_2_RELEASE_DATE = Date(dateString: "2011-04-24")
+let EPISODE_1_RELEASE_DATE = "2011-04-17"
+let EPISODE_2_RELEASE_DATE = "2011-04-24"
 
 class EpisodeTests: XCTestCase {
     var episode1: Episode!
@@ -21,8 +21,8 @@ class EpisodeTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        episode1 = Episode(title: EPISODE_1_NAME, releaseDate: EPISODE_1_RELEASE_DATE)
-        episode2 = Episode(title: EPISODE_2_NAME, releaseDate: EPISODE_2_RELEASE_DATE)
+        episode1 = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE)
+        episode2 = Episode(title: EPISODE_2_NAME, releaseDateString: EPISODE_2_RELEASE_DATE)
     }
     
     override func tearDown() {
@@ -39,14 +39,14 @@ class EpisodeTests: XCTestCase {
         XCTAssertEqual(episode1, episode1)
         
         // Igualdad
-        let copyOfEpisode = Episode(title: EPISODE_1_NAME, releaseDate: EPISODE_1_RELEASE_DATE)
+        let copyOfEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE)
         XCTAssertEqual(episode1, copyOfEpisode)
         
         // Desigualdad
-        let anotherEpisode = Episode(title: "pfssdfad", releaseDate: EPISODE_1_RELEASE_DATE)
+        let anotherEpisode = Episode(title: "pfssdfad", releaseDateString: EPISODE_1_RELEASE_DATE)
         XCTAssertNotEqual(episode1, anotherEpisode) // Debe coincidir el nombre
         
-        let dateMismatchEpisode = Episode(title: EPISODE_1_NAME, releaseDate: Date(dateString: "2012-01-01"))
+        let dateMismatchEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: "2012-01-01")
         XCTAssertNotEqual(episode1, dateMismatchEpisode)
     }
     
@@ -54,7 +54,7 @@ class EpisodeTests: XCTestCase {
     func testEpisodeDescription() {
         XCTAssertEqual(episode1.description, "1x01 Winter is Coming")
         
-        let mySeason = Season(title: "Season One", releaseDate: Date(dateString: "2011-04-17"), episodes: episode1)
+        let mySeason = Season(title: "Season One", releaseDateString: "2011-04-17", episodes: episode1)
     
         XCTAssertNotNil(mySeason)
         XCTAssertEqual(episode1.description, "Season One. 1x01 Winter is Coming")

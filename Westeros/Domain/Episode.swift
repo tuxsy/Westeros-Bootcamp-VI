@@ -17,6 +17,10 @@ import Foundation
  */
 final class Episode: TitleAndDate{
     weak var season: Season?
+    
+    convenience init(title: String, releaseDateString: String) {
+        self.init(title: title, releaseDate: Date(dateString: releaseDateString))
+    }
 }
 
 // MARK: - CustomStringConvertible

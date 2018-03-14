@@ -18,10 +18,9 @@ import Foundation
 final class Season: TitleAndDate{
     let episodes: [Episode]
     
-    init(title: String, releaseDate: Date, episodes: Episode...) {
+    init(title: String, releaseDateString: String, episodes: Episode...) {
         self.episodes = episodes
-        super.init(title: title, releaseDate: releaseDate)
-        
+        super.init(title: title, releaseDate: Date(dateString: releaseDateString))
         self.episodes.forEach{$0.season = self}
     }
 }

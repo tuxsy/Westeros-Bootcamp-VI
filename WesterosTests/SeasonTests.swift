@@ -11,10 +11,10 @@ import XCTest
 
 
 let SEASON_ONE_NAME = "Season 1"
-let SEASON_ONE_RELEASE_DATE = Date(dateString: "2011-04-17")
+let SEASON_ONE_RELEASE_DATE = "2011-04-17"
 
 let SEASON_TWO_NAME = "Season 2"
-let SEASON_TWO_RELEASE_DATE = Date(dateString: "2012-04-01")
+let SEASON_TWO_RELEASE_DATE = "2012-04-01"
 
 class SeasonTests: XCTestCase {
     
@@ -30,10 +30,10 @@ class SeasonTests: XCTestCase {
         super.setUp()
         episode1x1 = Episode(title: "1x01 Winter Is Coming", releaseDate: Date(dateString: "2011-04-17"))
         episode1x2 = Episode(title: "1x02 The Kingsroad", releaseDate: Date(dateString: "2011-04-24"))
-        seasonOne = Season(title: SEASON_ONE_NAME, releaseDate: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
+        seasonOne = Season(title: SEASON_ONE_NAME, releaseDateString: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
         
-        episode2x1 = Episode(title: "2x01 The North remembes", releaseDate: SEASON_TWO_RELEASE_DATE)
-        seasonTwo = Season(title: SEASON_TWO_NAME, releaseDate: SEASON_TWO_RELEASE_DATE, episodes: episode2x1)
+        episode2x1 = Episode(title: "2x01 The North remembes", releaseDateString: SEASON_TWO_RELEASE_DATE)
+        seasonTwo = Season(title: SEASON_TWO_NAME, releaseDateString: SEASON_TWO_RELEASE_DATE, episodes: episode2x1)
     }
     
     override func tearDown() {
@@ -66,22 +66,22 @@ class SeasonTests: XCTestCase {
         XCTAssertEqual(seasonOne, seasonOne)
         
         // Igualdad
-        let copyOfSeasonOne = Season(title: SEASON_ONE_NAME, releaseDate: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
+        let copyOfSeasonOne = Season(title: SEASON_ONE_NAME, releaseDateString: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
         XCTAssertEqual(seasonOne, copyOfSeasonOne)
         
         // Desigualdad
-        let anotherSession = Season(title: "test", releaseDate: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
+        let anotherSession = Season(title: "test", releaseDateString: SEASON_ONE_RELEASE_DATE, episodes: episode1x1, episode1x2)
         XCTAssertNotEqual(seasonOne, anotherSession) // El nombre de la sesión debe coincidir
         
-        let dateMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDate: Date(dateString: "2011-01-01"), episodes: episode1x1, episode1x2)
+        let dateMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDateString: "2011-01-01", episodes: episode1x1, episode1x2)
         XCTAssertNotEqual(seasonOne, dateMismatchSeason) // La fecha de lanzamiento debe ser igual
         
-        let episodesCountMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDate: SEASON_ONE_RELEASE_DATE, episodes: episode1x1)
+        let episodesCountMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDateString: SEASON_ONE_RELEASE_DATE, episodes: episode1x1)
         XCTAssertNotEqual(seasonOne, episodesCountMismatchSeason) // La cantidad de episodios deben ser iguales
         
-        let episdodesNameMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDate: SEASON_ONE_RELEASE_DATE, episodes:
-            Episode(title: "A", releaseDate: Date(dateString: "2011-01-01")),
-                                                 Episode(title: "B", releaseDate: Date(dateString: "2011-01-02"))
+        let episdodesNameMismatchSeason = Season(title: SEASON_ONE_NAME, releaseDateString: SEASON_ONE_RELEASE_DATE, episodes:
+            Episode(title: "A", releaseDateString: "2011-01-01"),
+                                                 Episode(title: "B", releaseDateString: "2011-01-02")
         )
         XCTAssertNotEqual(seasonOne, episdodesNameMismatchSeason) // Los episiodios deben ser los mismos
     }
@@ -103,8 +103,8 @@ class SeasonTests: XCTestCase {
     }
     
     func testSeasonComparison_comparedByReleaseDate() {
-        let s1 = Season(title: "A", releaseDate: Date(dateString: "2018-01-02"), episodes: Episode(title: "Ax01", releaseDate: Date(dateString: "2018-01-02")))
-        let s2 = Season(title: "B", releaseDate: Date(dateString: "2018-01-01"), episodes: Episode(title: "Bx01", releaseDate: Date(dateString: "2018-01-01")))
+        let s1 = Season(title: "A", releaseDateString: "2018-01-02", episodes: Episode(title: "Ax01", releaseDate: Date(dateString: "2018-01-02")))
+        let s2 = Season(title: "B", releaseDateString: "2018-01-01", episodes: Episode(title: "Bx01", releaseDate: Date(dateString: "2018-01-01")))
         
         XCTAssertLessThan(s2, s1)
     }
