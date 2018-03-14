@@ -21,6 +21,9 @@ class TitleAndDate {
 
 // MARK: - Proxies
 extension TitleAndDate {
+    /*
+     * Anotamos este proxy como @objc para permietir que las subclases lo sobreescriban
+     */
     @objc var proxyForEquality: String {
         return "\(self.title)###\(self.releaseDate.asString())"
     }

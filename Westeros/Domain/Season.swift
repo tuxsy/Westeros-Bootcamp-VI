@@ -9,6 +9,12 @@
 import Foundation
 
 // MARK: - Season Properties && Init
+/*
+ * La implementación de los siguientes protocolos le viene dada al extender de TitleAndDate
+ * - Equatable
+ * - Comparable
+ * - Hashable
+ */
 final class Season: TitleAndDate{
     let episodes: [Episode]
     

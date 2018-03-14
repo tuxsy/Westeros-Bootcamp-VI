@@ -45,7 +45,7 @@ class WikiViewController: UIViewController {
         super.viewWillAppear(animated)
         
         // Nos damos de alta de las notificaciones, este método viene de una extensión de UIViewController
-        observeNotificationHouseDidChange(selector: #selector(houseDidChange))
+        observeNotificationHouseDidChange()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

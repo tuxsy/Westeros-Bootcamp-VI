@@ -21,9 +21,22 @@ let HOUSE_KEY = "HouseKey"
 let HOUSE_DID_CHANGE_NOTIFICATION_NAME = "HouseDidChange"
 
 extension UIViewController {
-    func observeNotificationHouseDidChange(selector: Selector) {
+    // No me gusta que se continúe mostrando la vista si seleccionamos otra casa....
+    @objc func houseDidChangeNotificationHandler() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func sendHouseChangeNotification(house: House) {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: selector, name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        
+        let notification = Notification(name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: self, userInfo: [HOUSE_KEY : house])
+        
+        notificationCenter.post(notification)
+    }
+    
+    func observeNotificationHouseDidChange() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(houseDidChangeNotificationHandler), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
         
     }
     

@@ -9,6 +9,12 @@
 import Foundation
 
 // MARK: - Epsode Class && Init
+/*
+ * La implementación de los siguientes protocolos le viene dada al extender de TitleAndDate
+ * - Equatable
+ * - Comparable
+ * - Hashable
+ */
 final class Episode: TitleAndDate{
     weak var season: Season?
 }

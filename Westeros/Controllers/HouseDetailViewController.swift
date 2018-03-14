@@ -24,7 +24,6 @@ class HouseDetailViewController: UIViewController {
         self.model = model
         // Llamas a super
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
-        title = model.name
     }
     
     // Chapuza de los de Cupertino relacionada con los nil
@@ -42,6 +41,7 @@ class HouseDetailViewController: UIViewController {
     // Mark: - Sync
     func syncModelWithView() {
         // Model -> View
+        title = model.name
         houseNameLabel.text = "House \(model.name)"
         sigilImageView.image = model.sigil.image
         wordsLabel.text = model.words
@@ -51,7 +51,6 @@ class HouseDetailViewController: UIViewController {
     func setupUI() {
         let wikiButton = UIBarButtonItem(title: "Wiki", style: .plain, target: self, action: #selector(displayWiki))
         let members = UIBarButtonItem(title: "Members", style: .plain, target: self, action: #selector(displayMembers))
-        
         navigationItem.rightBarButtonItems = [wikiButton, members]
     }
     
