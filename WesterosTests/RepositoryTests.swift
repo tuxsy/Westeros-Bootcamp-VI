@@ -74,7 +74,7 @@ class RepositoryTests: XCTestCase {
     }
     
     func testSeasonFiltering() {
-        let filtered = Repository.local.seasons(filteredBy: { $0.title.lowercased().contains("sex") })
+        let filtered = Repository.local.seasons(filteredBy: { $0.title.lowercased().contains("six") })
         XCTAssertEqual(filtered.count, 1)
     }
     

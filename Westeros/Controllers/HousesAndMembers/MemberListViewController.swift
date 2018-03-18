@@ -34,6 +34,22 @@ class MemberListViewController: UIViewController {
         // Asignamos la fuente de datos
         tableView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Nos damos de alta de las notificaciones, este método viene de una extensión de UIViewController
+        observeNotificationHouseDidChange()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Nos damos de baja de las notificaciones, este método viene de una extensión de UIViewController
+        removeObserver()
+    }
+    
+    
 }
 
 // MARK: - UITableViewDataSource

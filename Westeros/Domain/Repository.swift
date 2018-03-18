@@ -93,9 +93,9 @@ final class LocalFactory: HouseFactory {
         
         let season5 = Season(title: "Season Five", releaseDateString: "2015-04-12", episodes: Episode(title: "The Wars to Come", releaseDateString: "2015-04-12"), Episode(title: "The House of Black and White", releaseDateString: "2015-04-19"))
         
-        let season6 = Season(title: "Season Sex", releaseDateString: "2016-04-24", episodes: Episode(title: "The Red Woman", releaseDateString: "2016-04-24"), Episode(title: "Home", releaseDateString: "2016-05-01"))
+        let season6 = Season(title: "Season Six", releaseDateString: "2016-04-24", episodes: Episode(title: "The Red Woman", releaseDateString: "2016-04-24"), Episode(title: "Home", releaseDateString: "2016-05-01"))
         
-        let season7 = Season(title: "Season Semen", releaseDateString: "2017-06-16", episodes: Episode(title: "Dragonstone", releaseDateString: "2017-06-16"), Episode(title:     "Stormborn", releaseDateString: "2017-06-23"))
+        let season7 = Season(title: "Season Seven", releaseDateString: "2017-06-16", episodes: Episode(title: "Dragonstone", releaseDateString: "2017-06-16"), Episode(title:     "Stormborn", releaseDateString: "2017-06-23"))
         
         return [season1, season2, season3, season4,season5, season6, season7]
     }

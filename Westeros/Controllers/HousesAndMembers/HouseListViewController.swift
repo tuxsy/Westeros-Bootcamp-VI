@@ -26,7 +26,7 @@ class HouseListViewController: UITableViewController {
     init(model: [House]) {
         self.model = model
         super.init(style: .plain)
-        title = "Westeros"
+        title = "Casas"
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,14 +79,22 @@ class HouseListViewController: UITableViewController {
         // Averiguar que casa han pulsado
         let house = model[indexPath.row]
         
-        // Aviso al delegado
-        delegate?.houseListViewController(self, didSelectHouse: house)
+        if UIDevice.current.userInterfaceIdiom == .pad { // Estamos en iPad
+            
+            // Aviso al delegado
+            delegate?.houseListViewController(self, didSelectHouse: house)
+            
+            // Mando la misma info a traves de notificaciones
+            sendHouseChangeNotification(house: house)
+            
+            // Guardar las coordenadas (section, row) de la ultima casa seleccionada
+            saveLastSelectedHouse(at: indexPath.row)
+            
+        } else if UIDevice.current.userInterfaceIdiom == .phone {// Estamos en iPhone
+            navigationController?.pushViewController(HouseDetailViewController(model: house), animated: true)
+        }
         
-        // Mando la misma info a traves de notificaciones
-        sendHouseChangeNotification(house: house)
         
-        // Guardar las coordenadas (section, row) de la ultima casa seleccionada
-        saveLastSelectedHouse(at: indexPath.row)
     }
 }
 
