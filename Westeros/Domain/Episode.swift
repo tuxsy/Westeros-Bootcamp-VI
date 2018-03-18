@@ -16,11 +16,18 @@ import Foundation
  * - Hashable
  */
 final class Episode: TitleAndDate{
+    let wikiUrl: URL
     weak var season: Season?
     
-    convenience init(title: String, releaseDateString: String) {
-        self.init(title: title, releaseDate: Date(dateString: releaseDateString))
+    init(title: String, releaseDate: Date, wikiUrl: URL) {
+        self.wikiUrl = wikiUrl
+        super.init(title: title, releaseDate: releaseDate)
     }
+    
+    convenience init (title: String, releaseDateString: String, urlString: String) {
+        self.init(title: title, releaseDate: Date(dateString: releaseDateString), wikiUrl: URL(string: urlString)!)
+    }
+    
 }
 
 // MARK: - CustomStringConvertible

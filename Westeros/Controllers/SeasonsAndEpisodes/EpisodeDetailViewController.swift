@@ -1,51 +1,48 @@
 //
-//  WikiViewController.swift
+//  EpisodeDetailViewController.swift
 //  Westeros
 //
-//  Created by Alexandre Freire on 15/02/2018.
+//  Created by Bruno Anglés Robles on 18/3/18.
 //  Copyright © 2018 Alexandre Freire. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class WikiViewController: UIViewController {
+class EpisodeDetailViewController: UIViewController {
     
-    // Mark: - Outlets
-    @IBOutlet weak var webView: WKWebView!
-    @IBOutlet weak var loadingView: UIActivityIndicatorView!
+    // MARK: - IBOutlets
+    @IBOutlet weak var episodeTitleLabel: UILabel!
+    @IBOutlet weak var releaseDateLabel: UILabel!
+    @IBOutlet weak var urlViewer: WKWebView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
-    // Mark: - Properties
-    var model: House
+    // MARK: - Propertiese && Initializer
+    var model: Episode
     
-    // Mark: - Initialization
-    init(model: House) {
+    init (model: Episode) {
         self.model = model
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
-    // chapuza
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-   
     // Mark: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView.isHidden = false
-        loadingView.startAnimating()
-        webView.navigationDelegate = self
+        loadingIndicator.isHidden = false
+        loadingIndicator.startAnimating()
+        urlViewer.navigationDelegate = self
         syncModelWithView()
     }
     
-   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Nos damos de alta de las notificaciones, este método viene de una extensión de UIViewController
-        observeNotificationHouseDidChange()
+        observeNotificationSeasonDidChange(mustRepeat: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,16 +54,20 @@ class WikiViewController: UIViewController {
     
     // MARK: - Sync
     func syncModelWithView() {
-        title = model.name
-        webView.load(URLRequest(url: model.wikiURL))
+        episodeTitleLabel.text = model.title
+        releaseDateLabel.text = model.releaseDate.asString()
+        NSLog("START LOADING \(model.wikiUrl)")
+        urlViewer.load(URLRequest(url: model.wikiUrl))
+        NSLog("STOP LOADING \(model.wikiUrl)")
     }
-    
+
 }
 
-extension WikiViewController: WKNavigationDelegate {
+
+extension EpisodeDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        loadingView.stopAnimating()
-        loadingView.isHidden = true
+        loadingIndicator.stopAnimating()
+        loadingIndicator.isHidden = true
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -80,18 +81,3 @@ extension WikiViewController: WKNavigationDelegate {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

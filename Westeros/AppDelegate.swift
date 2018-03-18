@@ -64,11 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
-        
-        if tabBarController.selectedIndex == 0 {
-            splitViewController.showDetailViewController(houseDetailViewController.wrappedInNavigation(), sender: nil)
-        } else {
-            splitViewController.showDetailViewController(seasonDetailViewController.wrappedInNavigation(), sender: nil)
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            if tabBarController.selectedIndex == 0 {
+                splitViewController.showDetailViewController(houseDetailViewController.wrappedInNavigation(), sender: nil)
+            } else {
+                splitViewController.showDetailViewController(seasonDetailViewController.wrappedInNavigation(), sender: nil)
+            }
         }
     }
 }

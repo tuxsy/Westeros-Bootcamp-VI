@@ -25,8 +25,13 @@ let SEASON_DID_CHANGE_NOTIFICATION_NAME = "SeasonDidChange"
 
 extension UIViewController {
     // No me gusta que se continúe mostrando la vista si seleccionamos otra casa....
-    @objc func houseDidChangeNotificationHandler() {
+    @objc func popViewController() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func popViewControllerTwoTimes () {
+        popViewController()
+        popViewController()
     }
     
     private func pushNotification (nameString: String, userInfo: [String: Any]) {
@@ -49,7 +54,14 @@ extension UIViewController {
     
     func observeNotificationHouseDidChange() {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(houseDidChangeNotificationHandler), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        notificationCenter.addObserver(self, selector: #selector(popViewController), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        
+    }
+    
+    func observeNotificationSeasonDidChange(mustRepeat: Bool) {
+        let notificationCenter = NotificationCenter.default
+        let selector = mustRepeat ? #selector(popViewControllerTwoTimes) : #selector(popViewController)
+        notificationCenter.addObserver(self, selector: selector, name: Notification.Name(SEASON_DID_CHANGE_NOTIFICATION_NAME), object: nil)
         
     }
     

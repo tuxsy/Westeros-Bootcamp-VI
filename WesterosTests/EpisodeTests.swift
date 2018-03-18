@@ -21,8 +21,8 @@ class EpisodeTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        episode1 = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE)
-        episode2 = Episode(title: EPISODE_2_NAME, releaseDateString: EPISODE_2_RELEASE_DATE)
+        episode1 = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE, urlString: "https://test.io/episode1")
+        episode2 = Episode(title: EPISODE_2_NAME, releaseDateString: EPISODE_2_RELEASE_DATE, urlString: "https://test.io/episode1")
     }
     
     override func tearDown() {
@@ -39,14 +39,14 @@ class EpisodeTests: XCTestCase {
         XCTAssertEqual(episode1, episode1)
         
         // Igualdad
-        let copyOfEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE)
+        let copyOfEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: EPISODE_1_RELEASE_DATE, urlString: "https://test.io/fake")
         XCTAssertEqual(episode1, copyOfEpisode)
         
         // Desigualdad
-        let anotherEpisode = Episode(title: "pfssdfad", releaseDateString: EPISODE_1_RELEASE_DATE)
+        let anotherEpisode = Episode(title: "pfssdfad", releaseDateString: EPISODE_1_RELEASE_DATE, urlString: "https://test.io/fake")
         XCTAssertNotEqual(episode1, anotherEpisode) // Debe coincidir el nombre
         
-        let dateMismatchEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: "2012-01-01")
+        let dateMismatchEpisode = Episode(title: EPISODE_1_NAME, releaseDateString: "2012-01-01", urlString: "https://test.io/fake")
         XCTAssertNotEqual(episode1, dateMismatchEpisode)
     }
     
@@ -72,8 +72,8 @@ class EpisodeTests: XCTestCase {
     }
     
     func testEpisodeComparison_comparedByReleaseDate() {
-        let e1 = Episode(title: "A", releaseDate: Date(dateString: "2018-01-02"))
-        let e2 = Episode(title: "A", releaseDate: Date(dateString: "2018-01-01"))
+        let e1 = Episode(title: "A", releaseDateString: "2018-01-02", urlString: "https://test.io/fake")
+        let e2 = Episode(title: "A", releaseDateString: "2018-01-01", urlString: "https://test.io/fake")
         XCTAssertLessThan(e2, e1)
     }
     

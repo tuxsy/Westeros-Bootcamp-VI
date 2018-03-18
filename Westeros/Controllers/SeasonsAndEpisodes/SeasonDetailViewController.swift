@@ -44,7 +44,16 @@ class SeasonDetailViewController: UIViewController {
     
     // MARK: - Set UI
     func setupUI () {
+        let episodesButton = UIBarButtonItem(title: "Episodios", style: .plain, target: self, action: #selector(displayEpisodesList))
+         navigationItem.rightBarButtonItems = [episodesButton]
+    }
+    
+    @objc func displayEpisodesList() {
+        // Creamos el WikiVC
+        let viewController = EpisodeListViewController(model: model.episodes)
         
+        // Hacemos push
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }
