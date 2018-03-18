@@ -52,9 +52,10 @@ extension UIViewController {
     
     
     
-    func observeNotificationHouseDidChange() {
+    func observeNotificationHouseDidChange(mustRepeat: Bool) {
         let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self, selector: #selector(popViewController), name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
+        let selector = mustRepeat ? #selector(popViewControllerTwoTimes) : #selector(popViewController)
+        notificationCenter.addObserver(self, selector: selector, name: Notification.Name(HOUSE_DID_CHANGE_NOTIFICATION_NAME), object: nil)
         
     }
     

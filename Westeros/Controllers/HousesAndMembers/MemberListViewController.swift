@@ -33,13 +33,16 @@ class MemberListViewController: UIViewController {
         
         // Asignamos la fuente de datos
         tableView.dataSource = self
+        
+        // Asignamos el delegado
+        tableView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Nos damos de alta de las notificaciones, este método viene de una extensión de UIViewController
-        observeNotificationHouseDidChange()
+        observeNotificationHouseDidChange(mustRepeat: false)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -75,8 +78,15 @@ extension MemberListViewController: UITableViewDataSource {
         // Devolver la celda
         return cell
     }
+
 }
 
+extension MemberListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let person = self.model[indexPath.row]
+        navigationController?.pushViewController(MemberDetailViewController(model: person), animated:true)
+    }
+}
 
 
 

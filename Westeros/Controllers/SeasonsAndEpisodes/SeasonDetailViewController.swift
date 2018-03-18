@@ -40,6 +40,7 @@ class SeasonDetailViewController: UIViewController {
         seasonNameLabel.text = model.title
         releaseDateLabel.text = model.releaseDate.asString()
         numberOfEpisodesLabel.text = "\(model.count)"
+        title = model.title
     }
     
     // MARK: - Set UI

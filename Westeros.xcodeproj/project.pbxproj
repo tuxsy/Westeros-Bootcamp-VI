@@ -21,6 +21,8 @@
 		450E9406205E6E8A00F7C11A /* EpisodeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450E9404205E6E8A00F7C11A /* EpisodeListViewController.xib */; };
 		450E9409205E77B700F7C11A /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E9407205E77B700F7C11A /* EpisodeDetailViewController.swift */; };
 		450E940A205E77B700F7C11A /* EpisodeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450E9408205E77B700F7C11A /* EpisodeDetailViewController.xib */; };
+		450E940D205E8A6700F7C11A /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450E940B205E8A6700F7C11A /* MemberDetailViewController.swift */; };
+		450E940E205E8A6700F7C11A /* MemberDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 450E940C205E8A6700F7C11A /* MemberDetailViewController.xib */; };
 		4B52842B20362B8D00E03DD6 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B52842920362B8D00E03DD6 /* WikiViewController.swift */; };
 		4B52842C20362B8D00E03DD6 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B52842A20362B8D00E03DD6 /* WikiViewController.xib */; };
 		4B528433203644F600E03DD6 /* HouseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B528431203644F600E03DD6 /* HouseListViewController.swift */; };
@@ -69,6 +71,8 @@
 		450E9404205E6E8A00F7C11A /* EpisodeListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeListViewController.xib; sourceTree = "<group>"; };
 		450E9407205E77B700F7C11A /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		450E9408205E77B700F7C11A /* EpisodeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeDetailViewController.xib; sourceTree = "<group>"; };
+		450E940B205E8A6700F7C11A /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
+		450E940C205E8A6700F7C11A /* MemberDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberDetailViewController.xib; sourceTree = "<group>"; };
 		4B52842920362B8D00E03DD6 /* WikiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		4B52842A20362B8D00E03DD6 /* WikiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 		4B528431203644F600E03DD6 /* HouseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 				4B528432203644F600E03DD6 /* HouseListViewController.xib */,
 				4BC6ADD9203B68C100813C0D /* MemberListViewController.swift */,
 				4BC6ADDA203B68C100813C0D /* MemberListViewController.xib */,
+				450E940B205E8A6700F7C11A /* MemberDetailViewController.swift */,
+				450E940C205E8A6700F7C11A /* MemberDetailViewController.xib */,
 			);
 			path = HousesAndMembers;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				450E940A205E77B700F7C11A /* EpisodeDetailViewController.xib in Resources */,
 				4BC935FC202CE4A7007FE051 /* Assets.xcassets in Resources */,
 				4BAFC987203238ED00C8BF74 /* codeIsComing.png in Resources */,
+				450E940E205E8A6700F7C11A /* MemberDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +387,7 @@
 				4BC935F5202CE4A7007FE051 /* AppDelegate.swift in Sources */,
 				450E93EE20572B3E00F7C11A /* TitleAndDate.swift in Sources */,
 				450E93FD205D348F00F7C11A /* SeasonDetailViewController.swift in Sources */,
+				450E940D205E8A6700F7C11A /* MemberDetailViewController.swift in Sources */,
 				450E93EA20571DDD00F7C11A /* Season.swift in Sources */,
 				4BAFC9952033816C00C8BF74 /* Repository.swift in Sources */,
 				4B52842B20362B8D00E03DD6 /* WikiViewController.swift in Sources */,
