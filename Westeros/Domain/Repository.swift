@@ -9,6 +9,12 @@
 import UIKit
 
 
+enum HousesName: String {
+    case Stark = "Stark"
+    case Lannister = "Lannister"
+    case Targaryen = "Targaryen"
+}
+
 final class Repository {
     static let local = LocalFactory()
 }
@@ -20,6 +26,7 @@ protocol HouseFactory {
     
     var houses: [House] { get }
     func house(named: String) -> House?
+    func house(named: HousesName) -> House?
     func houses(filteredBy: HouseFilter) -> [House]
     
     var seasons: [Season] {get}
@@ -36,6 +43,11 @@ final class LocalFactory: HouseFactory {
         let house = houses.filter{ $0.name.uppercased() == name.uppercased() }.first
         return house
     }
+    
+    func house(named: HousesName) -> House? {
+        return house(named: named.rawValue)
+    }
+    
     
     func houses(filteredBy: HouseFilter) -> [House] {
         return houses.filter(filteredBy)
@@ -57,9 +69,9 @@ final class LocalFactory: HouseFactory {
         let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "León rampante")
         let targaryenSigil = Sigil(image: UIImage(named: "targaryenSmall.jpg")!, description: "Dragón Tricéfalo")
         
-        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Se acerca el invierno", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")! )
-        let lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Oye mi rugido", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!)
-        let targaryenHouse = House(name: "Targaryen", sigil: targaryenSigil, words: "Fuego y Sangre", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
+        let starkHouse = House(name: HousesName.Stark.rawValue, sigil: starkSigil, words: "Se acerca el invierno", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")! )
+        let lannisterHouse = House(name: HousesName.Lannister.rawValue, sigil: lannisterSigil, words: "Oye mi rugido", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!)
+        let targaryenHouse = House(name: HousesName.Targaryen.rawValue, sigil: targaryenSigil, words: "Fuego y Sangre", url: URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!)
         
         let robb = Person(name: "Robb", alias: "El Joven Lobo", house: starkHouse)
         let arya = Person(name: "Arya", house: starkHouse)

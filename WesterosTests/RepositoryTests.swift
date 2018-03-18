@@ -58,6 +58,11 @@ class RepositoryTests: XCTestCase {
         XCTAssertEqual(otherFilter.count, 1)
     }
     
+    func testReturnHouseByNameTypeSafe () {
+        let stark = Repository.local.house(named: .Stark)
+        XCTAssertEqual("Stark", stark?.name)
+    }
+    
     // MARK: - Season Collection test
     func testLocalRepositorySeasonsCreation() {
         XCTAssertNotNil(localSeasons)
